@@ -1,12 +1,11 @@
 // Require the dotenv module.
 require('dotenv').config()  
-
-
 // Require needed modules.
 const express = require('express')
-
 // Initialize the app object.
 const app = express()
+
+app.use('/places', require('./controllers/places'))
 
 // Create a homepage route.
 app.get('/', (req, res) => {
@@ -21,7 +20,6 @@ app.get('*', (req, res) => {
 })
 
 // Listen for connections.
-// app.listen(3000, function () {
     app.listen(process.env.PORT, function () {   
     console.log('I am awake!')
 })
