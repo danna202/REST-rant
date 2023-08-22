@@ -24,7 +24,13 @@ Steps:
 |DELETE|/places/:id/rant/:rantId|Delete a rant (comment) about a particular place|
 |GET   |  *                |404 page (matches any route not defined above)|
 
-
+|Field Name|Data Type|
+|-------------|-------------|
+|name         |string       |
+|city         |string       |
+|state        |string       |
+|cuisines     |string       |
+|pic          |string(URL)  |                                                  
 
 |NAME           |CITY               |STATE|CUISINES       |PICTURE|
 |---------------|-------------------|-----|---------------|-------|
