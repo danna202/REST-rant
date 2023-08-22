@@ -1,12 +1,10 @@
 const React = require('react')
-const React = require('react')
 
 function Def (html) {
-    function Def (html) {
-        return (
+      return (
             <html>
                 <head>
-                    <title>Title</title>
+                    <title>REST-Rant</title>
                 </head>
                 <body>
                     {html.children}
@@ -15,6 +13,5 @@ function Def (html) {
         )
       }
       
-}
 
 module.exports = Def
