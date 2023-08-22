@@ -8,10 +8,10 @@ Steps:
 *create files
 *create github
 
-!(https://images.unsplash.com/photo-1555992457-b8fefdd09069?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmVzdHVyYW50c3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60) 
+![resturant](https://images.unsplash.com/photo-1555992457-b8fefdd09069?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cmVzdHVyYW50c3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60) 
 
-|Method|  Path            Purpose                                        |
-|------|----------------|------------------------------------------------|
+|Method|  Path           |Purpose                                        |
+|------|-----------------|-----------------------------------------------|
 |GET   |  /               |Home Page                                     |
 |GET   |/places           |Places index page                             |
 |POST  |/places           |Create new place                              |
@@ -28,4 +28,5 @@ Steps:
 
 |NAME           |CITY               |STATE|CUISINES       |PICTURE|
 |---------------|-------------------|-----|---------------|-------|
-|Holy Moly      |Asheville          |NC   |American       |!( https://images.unsplash.com/photo-1555992336-fb0d29498b13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YW1lcmljYW4lMjByZXN0dXJhbnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=400&q=60)
+|Holy Moly      |Asheville          |NC   |American       |![american resturant](image.png)|
+|Wang Fu        |Waynesville        |NC   |Chinese        |![chinese resturant](image-1.png)
