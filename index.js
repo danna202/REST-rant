@@ -20,8 +20,11 @@ app.get('/', (req, res) => {
 })
 
 // 404 route
+// app.get('*', (req, res) => {
+//     res.status(404).send('<h1>not found</h1>')
+// })
 app.get('*', (req, res) => {
-    res.status(404).send('<h1>404 Not Found</h1>')
+    res.render('error404')
 })
 
 // Listen for connections.
