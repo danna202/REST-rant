@@ -18,6 +18,20 @@ app.get('/', (req, res) => {
     // (your web browser most likely!)
     res.render('home')
 })
+// Middleware to parse incoming request bodies
+app.use(express.urlencoded({ extended: true }));
+
+// Route to handle POST requests to "/places"
+app.post('/places', (req, res) => {
+    // Extract data from the request body
+    const { name, pic, city, state, cuisines } = req.body;
+
+    // Process the data (e.g., save to a database)
+    // ...
+
+    // Respond with a success message
+    res.send('Place added successfully');
+});
 
 // 404 route
 // app.get('*', (req, res) => {
