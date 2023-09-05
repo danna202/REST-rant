@@ -8,12 +8,14 @@ const app = express()
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
+
+// Middleware
 app.use(express.static('public'))
 
 app.use('/places', require('./controllers/places'))
-
+// Middleware to parse incoming request bodies
 app.use(express.urlencoded({ extended: true }));
-
+app.use(express.json())
 
 // Create a homepage route.
 app.get('/', (req, res) => {
@@ -21,8 +23,6 @@ app.get('/', (req, res) => {
     // (your web browser most likely!)
     res.render('home')
 })
-// Middleware to parse incoming request bodies
-app.use(express.urlencoded({ extended: true }));
 
 // Route to handle POST requests to "/places"
 app.post('/places', (req, res) => {
