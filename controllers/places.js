@@ -8,10 +8,23 @@ router.get('/new', (req, res) => {
 router.get('/', (req, res) => {
     res.render('places/index', { places })
 })
-
+// Show
+// router.get('/:id', (req, res) => {
+//     res.render('places/show')
+// })
 router.get('/:id', (req, res) => {
-  res.render('places/show', { place: places[req.params.id] })
+  let id = Number(req.params.id)
+  if (isNaN(id)) {
+    res.render('error404')
+  }
+  else if (!places[id]) {
+    res.render('error404')
+  }
+  else {
+    res.render('places/show', { place: places[id] })
+  }
 })
+
 
 
 
