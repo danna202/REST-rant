@@ -11,6 +11,7 @@ function Def (html) {
                 </head>
                 <body>
                 <nav>
+                    <div>
                         <ul>
                             <li>
                             <a href="/">Home</a>
@@ -22,7 +23,8 @@ function Def (html) {
                             <a href="/places/new">Add Place</a>
                             </li>
                         </ul>
-                        </nav>
+                    </div>
+                </nav>
 
                     {html.children}
                 </body>

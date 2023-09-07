@@ -21,11 +21,11 @@ nav li {
 }
 
 nav a {
-  color: white;
+  color: rgb(27, 24, 197);
   font-size: 1.5em;
 }
 
 nav a:hover {
-  color: pink;
+  color: rgb(201, 126, 201);
   text-decoration: none;
 }

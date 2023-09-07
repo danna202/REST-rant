@@ -2,6 +2,8 @@
 require('dotenv').config()  
 // Require needed modules.
 const express = require('express')
+// require("method-override")
+// const methodOverride = require('method-override')
 // Initialize the app object.
 const app = express()
 // Express settings
@@ -11,11 +13,10 @@ app.engine('jsx', require('express-react-views').createEngine())
 
 // Middleware
 app.use(express.static('public'))
-
 app.use('/places', require('./controllers/places'))
-// Middleware to parse incoming request bodies
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
+// app.use(methodOverride('_method'))
 
 // Create a homepage route.
 app.get('/', (req, res) => {
