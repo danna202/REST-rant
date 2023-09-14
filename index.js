@@ -56,9 +56,5 @@ app.get('*', (req, res) => {
     res.render('error404')
 })
 
-// Listen for connections.
-    app.listen(process.env.PORT, function () {   
-    console.log('I am awake!')
-})
-
+module.exports.Place = require('./places')
 
