@@ -1,11 +1,22 @@
 // Require the dotenv module.
 require('dotenv').config()  
 // Require needed modules.
-const express = require('express')
+const router = require('express').Router()
+const db = require('../models')
+
 // require("method-override")
 // const methodOverride = require('method-override')
 // Initialize the app object.
 const app = express()
+const mongoose = require('mongoose')
+
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true, 
+  useUnifiedTopology: true
+})
+
+module.exports.Place = require('./places')
+
 // Express settings
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
