@@ -38,6 +38,15 @@ router.get('/:id', (req, res) => {
   })
 })
 
+router.get('/:id/edit', (req, res) => {
+  db.Place.findById(req.params.id)
+  .then(place => {
+      res.render('places/edit', { place })
+  })
+  .catch(err => {
+      res.render('error404')
+  })
+})
 
 
 
@@ -102,33 +111,27 @@ router.post('/', (req, res) => {
   })
 })
 
+router.delete('/:id', (req, res) => {
+  db.Place.findByIdAndDelete(req.params.id)
+  .then(place => {
+      res.redirect('/places')
+  })
+  .catch(err => {
+      console.log('err', err)
+      res.render('error404')
+  })
+})
 
+router.get('/:id/edit', (req, res) => {
+  db.Place.findById(req.params.id)
+  .then(place => {
+      res.render('places/edit', { place })
+  })
+  .catch(err => {
+      res.render('error404')
+  })
+})
 
-
-
-
-
-
-
-
-// Get places
-// router.get('/', (req, res) => {
-//   let places = [{
-//       name: 'Holy Moly',
-//       city: 'Asheville',
-//       state: 'NC',
-//       cuisines: 'American, Burgers, Sandwiches',
-//       pic: "/images/american.png"
-//     }, {
-//       name: 'Wang Fu',
-//       city: 'Waynesville',
-//       state: 'NC',
-//       cuisines: 'Chinese',
-//       pic: '/images/chinese.png'
-//     }]
-    
-//   res.render('places/index', { places: places })
-// })
 
 
 

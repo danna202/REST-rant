@@ -7,7 +7,35 @@ function show (data) {
       No comments yet!
     </h3>
   )
+   let rating = (
+    <h3 className="inactive">
+      No rating yet!
+    </h3> 
+  )
   if (data.place.comments.length) {
+    let rating = (
+      <h3 className="inactive">
+        Not yet rated
+      </h3>
+    )
+    if (data.place.comments.length) {
+      let sumRatings = data.place.comments.reduce((tot, c) => {
+        return tot + c.stars
+      }, 0)
+      let averageRating = Math.round(sumRatings / data.place.comments.length)
+      let stars = ''
+      for (let i = 0; i < averageRating; i++) {
+        stars += 'â­ï¸'
+      }
+    }
+    rating = (
+      <h3>
+        {stars} stars
+      </h3>
+    ) 
+      
+    }
+    
     comments = data.place.comments.map(c => {
       return (
         <div className="border">
@@ -86,6 +114,8 @@ function show (data) {
        
     )
 
-}
+
+
+
 
 module.exports = show
