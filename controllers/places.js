@@ -57,7 +57,35 @@ router.get('/:id', (req, res) => {
 
 
 
+  router.post('/', (req, res) => {
+  db.Place.create(req.body)
+  .then(() => {
+      res.redirect('/places')
+  })
+  .catch(err => {
+    if (err && err.name == 'ValidationError') {
+      let message = 'Validation Error: '
+      for (var field in err.errors) {
+          message += `${field} was ${err.errors[field].value}. `
+          message += `${err.errors[field].message}`
+      }
+      console.log('Validation error message', message)
+      res.render('places/new', { message })
+  }
+  else {
+      res.render('error404')
+  }
+  }
+  )
+})
+
+
 router.post('/', (req, res) => {
+  if (!req.body.pic) {
+    // Default image if one is not provided
+    req.body.pic = 'http://placekitten.com/400/400'
+  }
+
   db.Place.create(req.body)
   .then(() => {
       res.redirect('/places')
@@ -67,6 +95,7 @@ router.post('/', (req, res) => {
       res.render('error404')
   })
 })
+
 
 
 
